@@ -1,0 +1,16 @@
+[Unit]
+Description=Artem Connection Telegram Bot
+
+[Service]
+Type=forking
+Restart=always
+RestartSec=10
+ExecStart=/home/opc/tbot/bot_service.sh start
+ExecStop=/home/opc/tbot/bot_service.sh stop
+User=opc
+Group=opc
+WorkingDirectory=/home/opc/
+PIDFile=/tmp/tbot.pid
+
+[Install]
+WantedBy=multi-user.target
